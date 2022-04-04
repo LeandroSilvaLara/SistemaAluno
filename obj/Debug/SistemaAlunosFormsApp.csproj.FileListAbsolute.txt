@@ -9,3 +9,13 @@ D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.c
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.csproj.CoreCompileInputs.cache
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.exe
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.pdb
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\EntityFramework.dll
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\EntityFramework.SqlServer.dll
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\System.Data.SQLite.dll
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\System.Data.SQLite.EF6.dll
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\System.Data.SQLite.Linq.dll
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\EntityFramework.xml
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\EntityFramework.SqlServer.xml
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\System.Data.SQLite.xml
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_Login.resources
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.csproj.CopyComplete

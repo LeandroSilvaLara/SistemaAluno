@@ -15,6 +15,22 @@ namespace SistemaAlunosFormsApp
         public Form1()
         {
             InitializeComponent();
+            F_Login f_Login = new F_Login();
+            f_Login.ShowDialog();
+        }
+
+        private void labl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pb_ledLogado_Click(object sender, EventArgs e)
+        { 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
