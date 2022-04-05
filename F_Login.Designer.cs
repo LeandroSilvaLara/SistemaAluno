@@ -1,4 +1,6 @@
-﻿namespace SistemaAlunosFormsApp
+﻿using System;
+
+namespace SistemaAlunosFormsApp
 {
     partial class F_Login
     {
@@ -63,6 +65,7 @@
             // 
             this.tb_senha.Location = new System.Drawing.Point(109, 253);
             this.tb_senha.Name = "tb_senha";
+            this.tb_senha.PasswordChar = '*';
             this.tb_senha.Size = new System.Drawing.Size(340, 20);
             this.tb_senha.TabIndex = 2;
             // 
@@ -84,6 +87,7 @@
             this.btn_logar.TabIndex = 4;
             this.btn_logar.Text = "Logar";
             this.btn_logar.UseVisualStyleBackColor = true;
+            this.btn_logar.Click += new System.EventHandler(this.btn_logar_Click);
             // 
             // btn_canelar
             // 
@@ -93,6 +97,7 @@
             this.btn_canelar.TabIndex = 5;
             this.btn_canelar.Text = "Cancelar";
             this.btn_canelar.UseVisualStyleBackColor = true;
+            this.btn_canelar.Click += new System.EventHandler(this.btn_canelar_Click);
             // 
             // panel1
             // 
@@ -148,6 +153,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void btn_logar_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

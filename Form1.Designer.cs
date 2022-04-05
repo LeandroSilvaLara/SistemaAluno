@@ -118,11 +118,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lb_nomeUsuario;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lb_acesso;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.PictureBox pb_ledLogado;
+        public System.Windows.Forms.Label lb_nomeUsuario;
+        public System.Windows.Forms.Label lb_acesso;
     }
 }
 
