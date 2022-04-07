@@ -37,8 +37,8 @@ namespace SistemaAlunosFormsApp
             this.btn_logar = new System.Windows.Forms.Button();
             this.btn_canelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +59,7 @@ namespace SistemaAlunosFormsApp
             this.tb_username.Name = "tb_username";
             this.tb_username.Size = new System.Drawing.Size(340, 20);
             this.tb_username.TabIndex = 1;
-            
+            this.tb_username.Text = "reandoro";
             // 
             // tb_senha
             // 
@@ -68,6 +68,7 @@ namespace SistemaAlunosFormsApp
             this.tb_senha.PasswordChar = '*';
             this.tb_senha.Size = new System.Drawing.Size(340, 20);
             this.tb_senha.TabIndex = 2;
+            this.tb_senha.Text = "123";
             // 
             // Senha
             // 
@@ -108,16 +109,6 @@ namespace SistemaAlunosFormsApp
             this.panel1.Size = new System.Drawing.Size(518, 76);
             this.panel1.TabIndex = 6;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaAlunosFormsApp.Properties.Resources.Educa;
-            this.pictureBox1.Location = new System.Drawing.Point(69, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(88, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -127,6 +118,16 @@ namespace SistemaAlunosFormsApp
             this.label1.Size = new System.Drawing.Size(143, 31);
             this.label1.TabIndex = 7;
             this.label1.Text = "OnliNotas";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaAlunosFormsApp.Properties.Resources.Educa;
+            this.pictureBox1.Location = new System.Drawing.Point(69, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(88, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // F_Login
             // 

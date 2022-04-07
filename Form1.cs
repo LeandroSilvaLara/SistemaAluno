@@ -44,8 +44,81 @@ namespace SistemaAlunosFormsApp
             lb_acesso.Text = "0";
             lb_nomeUsuario.Text = "---";
             pb_ledLogado.Image = Properties.Resources.led_vermelho;
-            Globais.nivel = 0;
+            Globais.nivel = 0; 
             Globais.logado = false;
+        }
+
+        private void bancoDeDadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Globais.logado)
+            {
+                if (Globais.nivel >= 2)
+                    //PROCEDIMENTOS
+                {
+                   
+                }
+                else
+                {
+                    MessageBox.Show("Acesso não permitido");
+                }
+            }
+            else
+            {
+                MessageBox.Show("É necessário ter um usuário logado");
+            }
+        }
+
+        private void novoUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Globais.logado)
+            {
+                if (Globais.nivel >= 1)
+                //PROCEDIMENTOS
+                {
+                    F_NovoUsuario f_NovoUsuario = new F_NovoUsuario();
+                    f_NovoUsuario.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Acesso não permitido");
+                }
+            }
+            else
+            {
+                MessageBox.Show("É necessário ter um usuário logado");
+            }
+        }
+
+        private void gestãoDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Globais.logado)
+            {
+                if (Globais.nivel >= 1)
+                //PROCEDIMENTOS
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Acesso não permitido");
+                }
+            }
+            else
+            {
+                MessageBox.Show("É necessário ter um usuário logado");
+            }
+        }
+
+        private void novoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Globais.logado)
+            {
+                //PROCEDIMENTOS
+            }
+            else
+            {
+                MessageBox.Show("É necessário ter um usuário logado");
+            }
         }
     }
 }

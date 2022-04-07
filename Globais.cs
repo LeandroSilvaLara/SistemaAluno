@@ -10,6 +10,6 @@ namespace SistemaAlunosFormsApp
     {
         public static string versao = "1.0";
         public static Boolean logado = false;
-        public static int nivel = 0;
+        public static int nivel = 0;// 0=Básico - 2=Gerente - 3=Master
     }
 }

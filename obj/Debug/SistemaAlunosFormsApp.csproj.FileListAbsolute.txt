@@ -19,3 +19,4 @@ D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\EntityFramework.SqlServ
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\System.Data.SQLite.xml
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_Login.resources
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.csproj.CopyComplete
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_NovoUsuario.resources
