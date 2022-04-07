@@ -35,6 +35,7 @@ namespace SistemaAlunosFormsApp
                 }
             }catch (Exception ex)
             {
+                ConexaoBanco().Close();
                 throw ex;
             }
         }
