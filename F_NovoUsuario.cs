@@ -28,5 +28,31 @@ namespace SistemaAlunosFormsApp
 
             Banco.NovoUsuario(usuario);
         }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            tb_nome.Clear();
+            tb_username.Clear();
+            tb_senha.Clear();
+            cb_status.Text = "";
+            n_nivel.Value = 0;
+            tb_nome.Focus();
+            
+        }
+
+        private void tb_novo_Click(object sender, EventArgs e)
+        {
+            tb_nome.Clear();
+            tb_username.Clear();
+            tb_senha.Clear();
+            cb_status.Text = "";
+            n_nivel.Value = 0;
+            tb_nome.Focus();
+        }
     }
 }
