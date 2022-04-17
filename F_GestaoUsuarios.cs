@@ -26,7 +26,7 @@ namespace SistemaAlunosFormsApp
         {
             dgv_usuarios.DataSource = Banco.ObterUsuariosIdNome();
             dgv_usuarios.Columns[0].Width = 85;
-            dgv_usuarios.Columns[1].Width = 190;
+            dgv_usuarios.Columns[1].Width = 250;
         }
 
         private void dgv_usuarios_SelectionChanged(object sender, EventArgs e)
@@ -37,14 +37,80 @@ namespace SistemaAlunosFormsApp
             {
                 DataTable dt = new DataTable();
                 string vid = dgv.SelectedRows[0].Cells[0].Value.ToString();
-                dt = Banco.ObterDadosUsuarios(vid);
+                dt = Banco.ObterDadosUsuario(vid);
                 tb_id.Text = dt.Rows[0].Field<Int64>("N_IDUSUARIO").ToString();
                 tb_nome.Text = dt.Rows[0].Field<string>("T_NOMEUSUARIO").ToString();
                 tb_username.Text = dt.Rows[0].Field<string>("T_USERNAME").ToString();
                 tb_senha.Text = dt.Rows[0].Field<string>("T_SENHAUSUARIO").ToString();
                 cb_status.Text = dt.Rows[0].Field<string>("T_STATUSUARIO").ToString();
-                n_nivel.Value = dt.Rows[0].Field<Int64>("N_NIVELUSUARIO");
+                //n_nivel.Value = dt.Rows[0].Field<Int64>("N_NIVELUSUARIO");   
+            }
+        }
+        private void btn_novo_Click(object sender, EventArgs e)
+        {
+            F_NovoUsuario f_NovoUsuario = new F_NovoUsuario();
+            f_NovoUsuario.ShowDialog();
+            dgv_usuarios.DataSource = Banco.ObterUsuariosIdNome();
+        }
+
+        private void btn_salvar_Click(object sender, EventArgs e)
+        {
+            int linha = dgv_usuarios.SelectedRows[0].Index;
+            Usuario usuario = new Usuario();
+            usuario.id = Convert.ToInt32(tb_id.Text);
+            usuario.nome = tb_nome.Text;
+            usuario.username = tb_username.Text;
+            usuario.senha = tb_senha.Text;
+            usuario.status = cb_status.Text;
+            usuario.nivel = Convert.ToInt32(Math.Round(n_nivel.Value, 0));
+            //Banco.AtualizarUsuario(usuario);
+            //dgv_usuarios.DataSource = Banco.ObterUsuariosIdNome();
+            //dgv_usuarios.CurrentCell = dgv_usuarios[0, linha];
+            //dgv_usuarios[0, linha].Value = tb_id.Text;
+            dgv_usuarios[1, linha].Value = tb_nome.Text;
+        }
+
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Confirma exclusão ?", "Excluir ?", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                //Banco.ExcluirUsuario(tb_id.Text);
+                dgv_usuarios.Rows.Remove(dgv_usuarios.CurrentRow);
+            }
+        }
+
+        private void btn_novo_Click_1(object sender, EventArgs e)
+        {
+            F_NovoUsuario f_NovoUsuario = new F_NovoUsuario();
+            f_NovoUsuario.ShowDialog();
+            dgv_usuarios.DataSource = Banco.ObterUsuariosIdNome();
+        }
+
+        private void btn_salvar_Click_1(object sender, EventArgs e)
+        {
+            int linha = dgv_usuarios.SelectedRows[0].Index;
+            Usuario usuario = new Usuario();
+            usuario.id = Convert.ToInt32(tb_id.Text);
+            usuario.nome = tb_nome.Text;
+            usuario.username = tb_username.Text;
+            usuario.senha = tb_senha.Text;
+            usuario.status = cb_status.Text;
+            usuario.nivel = Convert.ToInt32(Math.Round(n_nivel.Value, 0));
+            Banco.AtualizarUsuario(usuario);
+            dgv_usuarios[1, linha].Value = tb_nome.Text;
+        }
+
+        private void btn_excluir_Click_1(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Confirma exclusão ?", "Excluir ?", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                Banco.ExcluirUsuario(tb_id.Text);
+                dgv_usuarios.Rows.Remove(dgv_usuarios.CurrentRow);
             }
         }
     }
 }
+    
+
