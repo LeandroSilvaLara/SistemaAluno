@@ -19,15 +19,9 @@
             }
             base.Dispose(disposing);
         }
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_excluirHorario = new System.Windows.Forms.Button();
             this.btn_fechar = new System.Windows.Forms.Button();
@@ -73,6 +67,7 @@
             this.btn_excluirHorario.TabIndex = 10;
             this.btn_excluirHorario.Text = "Imprimir Turma";
             this.btn_excluirHorario.UseVisualStyleBackColor = true;
+            this.btn_excluirHorario.Click += new System.EventHandler(this.btn_excluirHorario_Click);
             // 
             // btn_fechar
             // 
@@ -101,7 +96,7 @@
             this.btn_salvarSalvaredicoes.Name = "btn_salvarSalvaredicoes";
             this.btn_salvarSalvaredicoes.Size = new System.Drawing.Size(150, 27);
             this.btn_salvarSalvaredicoes.TabIndex = 8;
-            this.btn_salvarSalvaredicoes.Text = "Salvar Edições";
+            this.btn_salvarSalvaredicoes.Text = "Salvar         Edições";
             this.btn_salvarSalvaredicoes.UseVisualStyleBackColor = true;
             this.btn_salvarSalvaredicoes.Click += new System.EventHandler(this.btn_salvarSalvaredicoes_Click);
             // 
@@ -119,14 +114,14 @@
             // 
             this.dgv_turmas.AllowUserToAddRows = false;
             this.dgv_turmas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_turmas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_turmas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_turmas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_turmas.EnableHeadersVisualStyles = false;
             this.dgv_turmas.Location = new System.Drawing.Point(12, 12);
@@ -275,8 +270,6 @@
 
         }
 
-        #endregion
-
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgv_turmas;
         private System.Windows.Forms.Button btn_excluirHorario;
@@ -296,6 +289,5 @@
         private System.Windows.Forms.TextBox tb_nomeTurma;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tb_vagas;
-       
     }
 }

@@ -4,9 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace SistemaAlunosFormsApp
 {
@@ -86,20 +90,27 @@ namespace SistemaAlunosFormsApp
                 tb_nomeTurma.Text = dt.Rows[0].Field<string>("T_DSCTURMA");
                 //numeroVagas();
 
-                // Cálculo de vagas
-                string queryVagas = String.Format(@"
+                tb_vagas.Text = calcVagas();
+            }
+        }
+
+        private string calcVagas()
+        {
+            // Cálculo de vagas
+            string queryVagas = String.Format(@"
                     SELECT
                         N_IDALUNO as 'contVagas'
                     FROM
                         tb_alunos
                     WHERE
                         T_STATUS='A' and N_IDTURMA={0}", idSelecionado);
-                dt = Banco.dql(queryVagas);
-                int vagas = Int32.Parse(Math.Round(n_maxAlunos.Value, 0).ToString());
-                vagas -= Int32.Parse(dt.Rows[0].Field<Int64>("contVagas").ToString());
-                tb_vagas.Text = vagas.ToString();
-            }
+            DataTable dt = Banco.dql(queryVagas);
+            int vagas = Int32.Parse(Math.Round(n_maxAlunos.Value, 0).ToString());
+            vagas -= Int32.Parse(dt.Rows[0].Field<Int64>("contVagas").ToString());
+            
+            return vagas.ToString();
         }
+
 
         private void btn_novaTurma_Click(object sender, EventArgs e)
         {
@@ -174,6 +185,41 @@ namespace SistemaAlunosFormsApp
         private void btn_fechar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btn_excluirHorario_Click(object sender, EventArgs e)
+        {
+            string nomeArquino = Globais.caminho + @"\turmas.pdf";
+            FileStream arquivoPDF = new FileStream(nomeArquino, FileMode.Create);
+            Document doc = new Document(PageSize.A4);
+            PdfWriter escritorPDF = PdfWriter.GetInstance(doc, arquivoPDF);
+
+            
+            string dados = "";
+
+            Paragraph paragrafo1 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 20, (int)System.Drawing.FontStyle.Bold));
+            paragrafo1.Alignment = Element.ALIGN_CENTER;
+            paragrafo1.Add("CFB OnliNotas");
+            paragrafo1.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Italic);
+            paragrafo1.Add("Acesso sua nota online!");
+            string texto = "Leandro Lara";
+            paragrafo1.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Italic);
+            paragrafo1.Add(texto);
+
+            Paragraph paragrafo2 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Bold));
+            paragrafo2.Alignment = Element.ALIGN_LEFT;
+            paragrafo2.Add("Teste do páragrafo 2 resumo");
+            paragrafo2.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Italic);
+            paragrafo2.Add("Acesso ");
+            texto = "Leandro Lara";
+            paragrafo2.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Italic);
+            paragrafo2.Add(texto);
+
+            doc.Open();
+            doc.Add(paragrafo1);
+            doc.Add(paragrafo2);
+            doc.Close();
+
         }
     }
 }
