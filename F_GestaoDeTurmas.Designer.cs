@@ -27,7 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_excluirHorario = new System.Windows.Forms.Button();
             this.btn_fechar = new System.Windows.Forms.Button();
@@ -83,6 +83,7 @@
             this.btn_fechar.TabIndex = 11;
             this.btn_fechar.Text = "Fechar";
             this.btn_fechar.UseVisualStyleBackColor = true;
+            this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
             // btn_exluirTurma
             // 
@@ -92,6 +93,7 @@
             this.btn_exluirTurma.TabIndex = 9;
             this.btn_exluirTurma.Text = "Excluir Horário";
             this.btn_exluirTurma.UseVisualStyleBackColor = true;
+            this.btn_exluirTurma.Click += new System.EventHandler(this.btn_exluirTurma_Click);
             // 
             // btn_salvarSalvaredicoes
             // 
@@ -99,8 +101,9 @@
             this.btn_salvarSalvaredicoes.Name = "btn_salvarSalvaredicoes";
             this.btn_salvarSalvaredicoes.Size = new System.Drawing.Size(150, 27);
             this.btn_salvarSalvaredicoes.TabIndex = 8;
-            this.btn_salvarSalvaredicoes.Text = "Salvar         Edições";
+            this.btn_salvarSalvaredicoes.Text = "Salvar Edições";
             this.btn_salvarSalvaredicoes.UseVisualStyleBackColor = true;
+            this.btn_salvarSalvaredicoes.Click += new System.EventHandler(this.btn_salvarSalvaredicoes_Click);
             // 
             // btn_novaTurma
             // 
@@ -110,19 +113,20 @@
             this.btn_novaTurma.TabIndex = 7;
             this.btn_novaTurma.Text = "Nova Turma";
             this.btn_novaTurma.UseVisualStyleBackColor = true;
+            this.btn_novaTurma.Click += new System.EventHandler(this.btn_novaTurma_Click);
             // 
             // dgv_turmas
             // 
             this.dgv_turmas.AllowUserToAddRows = false;
             this.dgv_turmas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_turmas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_turmas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_turmas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_turmas.EnableHeadersVisualStyles = false;
             this.dgv_turmas.Location = new System.Drawing.Point(12, 12);
@@ -133,6 +137,7 @@
             this.dgv_turmas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_turmas.Size = new System.Drawing.Size(485, 477);
             this.dgv_turmas.TabIndex = 10;
+            this.dgv_turmas.SelectionChanged += new System.EventHandler(this.dgv_turmas_SelectionChanged);
             // 
             // cb_professores
             // 
