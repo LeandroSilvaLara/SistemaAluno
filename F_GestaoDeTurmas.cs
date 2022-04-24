@@ -86,6 +86,18 @@ namespace SistemaAlunosFormsApp
                 tb_nomeTurma.Text = dt.Rows[0].Field<string>("T_DSCTURMA");
                 //numeroVagas();
 
+                // Cálculo de vagas
+                string queryVagas = String.Format(@"
+                    SELECT
+                        N_IDALUNO as 'contVagas'
+                    FROM
+                        tb_alunos
+                    WHERE
+                        T_STATUS='A' and N_IDTURMA={0}", idSelecionado);
+                dt = Banco.dql(queryVagas);
+                int vagas = Int32.Parse(Math.Round(n_maxAlunos.Value, 0).ToString());
+                vagas -= Int32.Parse(dt.Rows[0].Field<Int64>("contVagas").ToString());
+                tb_vagas.Text = vagas.ToString();
             }
         }
 
@@ -114,8 +126,8 @@ namespace SistemaAlunosFormsApp
                     queryAtualizarTurma = String.Format(@"
                      UPDATE tb_turmas SET T_DSCTURMA = '{0}',N_IDPROFESSOR= {1},N_IDHORARIO = {2}, N_MAXALUNOS= '{3}',T_STATUS = '{4}' WHERE N_IDTURMA = {5}", tb_nomeTurma.Text,
                      cb_professores.SelectedValue, cb_horario.SelectedValue, Int32.Parse(Math.Round(n_maxAlunos.Value, 0).ToString()), cb_status.SelectedValue, idSelecionado);
-                    // Banco.dml(queryAtualizarTurma);
-                    //numeroVagas();
+                     Banco.dml(queryAtualizarTurma);
+                     //numeroVagas();
                 }
                 else
                 {
