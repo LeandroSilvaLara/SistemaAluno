@@ -58,6 +58,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_professores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_professores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_professores.EnableHeadersVisualStyles = false;
             this.dgv_professores.Location = new System.Drawing.Point(12, 48);
             this.dgv_professores.MultiSelect = false;
             this.dgv_professores.Name = "dgv_professores";
@@ -65,6 +66,7 @@
             this.dgv_professores.RowHeadersVisible = false;
             this.dgv_professores.Size = new System.Drawing.Size(428, 355);
             this.dgv_professores.TabIndex = 0;
+            this.dgv_professores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_professores_CellContentClick);
             this.dgv_professores.SelectionChanged += new System.EventHandler(this.dgv_professores_SelectionChanged);
             // 
             // label1
@@ -80,8 +82,10 @@
             // 
             this.tb_idProfessores.Location = new System.Drawing.Point(17, 23);
             this.tb_idProfessores.Name = "tb_idProfessores";
+            this.tb_idProfessores.ReadOnly = true;
             this.tb_idProfessores.Size = new System.Drawing.Size(100, 20);
-            this.tb_idProfessores.TabIndex = 2;
+            this.tb_idProfessores.TabIndex = 1;
+            this.tb_idProfessores.TabStop = false;
             // 
             // tb_professores
             // 

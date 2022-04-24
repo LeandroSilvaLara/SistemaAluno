@@ -108,5 +108,10 @@ namespace SistemaAlunosFormsApp
         {
             Close();
         }
+
+        private void dgv_professores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
