@@ -21,3 +21,5 @@ D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.csproj.CopyComplete
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_NovoUsuario.resources
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_GestaoUsuarios.resources
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_Horarios.resources
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_GestaoProfessores.resources
