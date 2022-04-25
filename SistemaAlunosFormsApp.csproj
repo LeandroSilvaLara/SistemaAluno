@@ -108,6 +108,12 @@
     <Compile Include="F_Login.Designer.cs">
       <DependentUpon>F_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_NovoAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_NovoAluno.Designer.cs">
+      <DependentUpon>F_NovoAluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_NovoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_NovoAluno.resx">
+      <DependentUpon>F_NovoAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_NovoUsuario.resx">
       <DependentUpon>F_NovoUsuario.cs</DependentUpon>
