@@ -194,6 +194,11 @@ namespace SistemaAlunosFormsApp
             Document doc = new Document(PageSize.A4);
             PdfWriter escritorPDF = PdfWriter.GetInstance(doc, arquivoPDF);
 
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(Globais.caminho + @"\Educa.png");
+            logo.ScaleToFit(140f, 120f);
+            logo.Alignment = Element.ALIGN_LEFT;
+            //logo.SetAbsolutePosition(100f, 700f); //X, -Y
+
             
             string dados = "";
 
@@ -215,10 +220,64 @@ namespace SistemaAlunosFormsApp
             paragrafo2.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Italic);
             paragrafo2.Add(texto);
 
+            //Inserindo Tabela
+            PdfPTable tabela = new PdfPTable(3);//3Colunas
+            tabela.DefaultCell.FixedHeight = 20;
+
+            PdfPCell celula1 = new PdfPCell();
+            celula1.Colspan = 3; //Linha 1 mescleda
+                                 // celula1.AddElement(logo);
+            celula1.HorizontalAlignment = Element.ALIGN_CENTER;
+            celula1.VerticalAlignment = Element.ALIGN_CENTER;
+            celula1.HorizontalAlignment = Element.ALIGN_CENTER;
+
+            tabela.AddCell(celula1);
+
+
+
+            tabela.AddCell("ID Turma");
+            tabela.AddCell("Turma");
+            tabela.AddCell("Horário");
+
+            string vquery = @"SELECT tbt.N_IDTURMA as 'ID' ,tbt.T_DSCTURMA as 'Turma',tbh.T_DSCHORARIO  as 'Horário da turma'
+                FROM tb_turmas as tbt
+                INNER JOIN
+                tb_horarios as tbh on tbh.N_IDHORARIO = tbt.N_IDHORARIO";
+
+            DataTable dtTurma = Banco.dql(vquery);
+            for (int i = 0; i < dtTurma.Rows.Count; i++)
+            {
+                tabela.AddCell(dtTurma.Rows[i].Field<Int64>("ID").ToString());
+                tabela.AddCell(dtTurma.Rows[i].Field<string>("Turma"));
+                tabela.AddCell(dtTurma.Rows[i].Field<string>("Horário da turma"));
+            }
+
+
+
+            PdfPCell celula2 = new PdfPCell(new Phrase("Tabela 2 AQUI!"));
+            celula2.Colspan = 3; //Linha 1 mescla
+            celula2.FixedHeight = 40;
+            celula2.Rotation = 0;
+            celula2.HorizontalAlignment = Element.ALIGN_CENTER;
+            celula2.VerticalAlignment = Element.ALIGN_MIDDLE;
+            // tabela.AddCell(celula2);
+
+
             doc.Open();
+            doc.Add(logo);
             doc.Add(paragrafo1);
             doc.Add(paragrafo2);
+            doc.Add(tabela);
+            // doc.Add(paragrafo2);
             doc.Close();
+
+            DialogResult res = MessageBox.Show("Desejsa abrir o Relatório", "Relatório", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(Globais.caminho + @"\turmas.pdf");
+            }
+
+
 
         }
     }
