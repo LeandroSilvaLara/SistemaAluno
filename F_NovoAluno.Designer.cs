@@ -46,8 +46,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.brn_addFoto = new System.Windows.Forms.Button();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.SuspendLayout();
@@ -202,6 +202,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "...";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -217,6 +218,16 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "JPG(*.jpg)|*.jpg|PNG(*.png)|*.png";
             // 
+            // brn_addFoto
+            // 
+            this.brn_addFoto.Location = new System.Drawing.Point(525, 159);
+            this.brn_addFoto.Name = "brn_addFoto";
+            this.brn_addFoto.Size = new System.Drawing.Size(85, 23);
+            this.brn_addFoto.TabIndex = 57;
+            this.brn_addFoto.Text = "Add foto";
+            this.brn_addFoto.UseVisualStyleBackColor = true;
+            this.brn_addFoto.Click += new System.EventHandler(this.brn_addFoto_Click);
+            // 
             // pb_foto
             // 
             this.pb_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -226,15 +237,6 @@
             this.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_foto.TabIndex = 56;
             this.pb_foto.TabStop = false;
-            // 
-            // brn_addFoto
-            // 
-            this.brn_addFoto.Location = new System.Drawing.Point(525, 159);
-            this.brn_addFoto.Name = "brn_addFoto";
-            this.brn_addFoto.Size = new System.Drawing.Size(85, 23);
-            this.brn_addFoto.TabIndex = 57;
-            this.brn_addFoto.Text = "Add foto";
-            this.brn_addFoto.UseVisualStyleBackColor = true;
             // 
             // F_NovoAluno
             // 

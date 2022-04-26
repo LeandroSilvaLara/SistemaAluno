@@ -28,3 +28,5 @@ D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\BouncyCastle.Crypto.dll
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\itextsharp.dll
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\itextsharp.xml
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_NovoAluno.resources
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_SelecionarTurma.resources
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_GestaoDeAlunos.resources

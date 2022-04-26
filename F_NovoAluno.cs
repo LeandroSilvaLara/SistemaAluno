@@ -15,9 +15,8 @@ namespace SistemaAlunosFormsApp
     {
         string origemCompleto = "";
         string foto = "";
-        //string pastaDestino = Globais.caminhoFoto;
+        string pastaDestino = Globais.caminhoFoto;
         string destinoCompleto = "";
-
         public F_NovoAluno()
         {
             InitializeComponent();
@@ -54,6 +53,8 @@ namespace SistemaAlunosFormsApp
             btn_gravar.Enabled = true;
             btn_cancelar.Enabled = true;
             btn_novo.Enabled = false;
+
+
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -71,11 +72,11 @@ namespace SistemaAlunosFormsApp
             btn_gravar.Enabled = false;
             btn_cancelar.Enabled = false;
             btn_novo.Enabled = true;
+
         }
 
         private void btn_gravar_Click(object sender, EventArgs e)
         {
-            /*
             if (destinoCompleto == "")
             {
                 if (MessageBox.Show("Sem foto selecionada.", "Quer continuar ?", MessageBoxButtons.YesNo) == DialogResult.No)
@@ -101,7 +102,6 @@ namespace SistemaAlunosFormsApp
                     }
                 }
             }
-            */
 
             string queryInsertAluno = String.Format(@"INSERT INTO tb_alunos (T_NOMEALUNO,T_TELEFONE,T_STATUS,N_IDTURMA,T_FOTO) VALUES ('{0}','{1}','{2}',{3},'{4}')", tb_nome.Text, mtb_telefone.Text, cb_status.SelectedValue, tb_turma.Tag.ToString(), destinoCompleto);
             Banco.dml(queryInsertAluno);
@@ -120,6 +120,50 @@ namespace SistemaAlunosFormsApp
             btn_gravar.Enabled = false;
             btn_cancelar.Enabled = false;
             btn_novo.Enabled = true;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            F_SelecionarTurma f_SelecionarTurma = new F_SelecionarTurma(this);
+            f_SelecionarTurma.ShowDialog();
+
+        }
+
+        private void brn_addFoto_Click(object sender, EventArgs e)
+        {
+            origemCompleto = "";
+            foto = "";
+            pastaDestino = Globais.caminhoFoto;
+            destinoCompleto = "";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                origemCompleto = openFileDialog1.FileName;
+                foto = openFileDialog1.SafeFileName;
+                destinoCompleto = pastaDestino + foto;
+
+            }
+            if (File.Exists(destinoCompleto))
+            {
+                if (MessageBox.Show("Arquino ja existe, deseja sobrepor?", "Substituir", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return;
+                }
+
+            }
+            pb_foto.ImageLocation = origemCompleto;
+
+            /* System.IO.File.Copy(origemCompleto, destinoCompleto, true);
+             if (File.Exists(destinoCompleto))
+             {
+                 pb_foto.ImageLocation = destinoCompleto;
+                // MessageBox.Show(destinoCompleto);
+             }
+             else
+             {
+                 MessageBox.Show("Arquivo não copiado");
+             }*/
         }
     }
 }

@@ -14,5 +14,6 @@ namespace SistemaAlunosFormsApp
         public static string caminho = System.Environment.CurrentDirectory;
         public static string nomeBanco = "banco_academia.db";
         public static string caminhoBanco = caminho + @"\banco\";
+        public static string caminhoFoto = caminho + @"\fotos\";
     }
 }
