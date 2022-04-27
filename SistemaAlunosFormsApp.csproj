@@ -84,6 +84,12 @@
     <Compile Include="F_Envio_Documento.Designer.cs">
       <DependentUpon>F_Envio_Documento.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Esqueceu_Senha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Esqueceu_Senha.Designer.cs">
+      <DependentUpon>F_Esqueceu_Senha.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_GestaoDeAlunos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,12 @@
     <Compile Include="F_NovoUsuario.Designer.cs">
       <DependentUpon>F_NovoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Resetar_Senha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Resetar_Senha.Designer.cs">
+      <DependentUpon>F_Resetar_Senha.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_SelecionarTurma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_Envio_Documento.resx">
       <DependentUpon>F_Envio_Documento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Esqueceu_Senha.resx">
+      <DependentUpon>F_Esqueceu_Senha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_GestaoDeAlunos.resx">
       <DependentUpon>F_GestaoDeAlunos.cs</DependentUpon>
@@ -171,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_NovoUsuario.resx">
       <DependentUpon>F_NovoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Resetar_Senha.resx">
+      <DependentUpon>F_Resetar_Senha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_SelecionarTurma.resx">
       <DependentUpon>F_SelecionarTurma.cs</DependentUpon>

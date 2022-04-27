@@ -54,5 +54,12 @@ namespace SistemaAlunosFormsApp
         {
             this.Close();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            F_Esqueceu_Senha sc = new F_Esqueceu_Senha();
+            this.Hide();
+            sc.Show();
+        }
     }
 }

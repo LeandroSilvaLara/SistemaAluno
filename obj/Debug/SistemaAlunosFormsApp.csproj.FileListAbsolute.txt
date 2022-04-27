@@ -31,3 +31,5 @@ D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_SelecionarTurma.resources
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_GestaoDeAlunos.resources
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_Envio_Documento.resources
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_Esqueceu_Senha.resources
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_Resetar_Senha.resources
