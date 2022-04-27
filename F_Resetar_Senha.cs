@@ -27,9 +27,11 @@ namespace SistemaAlunosFormsApp
         {
             if (txtResetPass.Text == txtResetPassVerf.Text)
             {
-                string sql = "SELECT * FROM tb_usuarios WHERE T_USERNAME='" + tb_username + "' AND T_SENHAUSUARIO='" + tb_senha + "'";
-                dt = Banco.dql(sql);
-                
+                string queryAtualizarTurma = "";
+                string mgs = "";
+
+               
+
             }
         }
     }

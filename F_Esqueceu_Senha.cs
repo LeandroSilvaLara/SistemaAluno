@@ -36,7 +36,7 @@ namespace SistemaAlunosFormsApp
             message.From = new MailAddress(from);
             message.Body = messageBody;
             message.Subject = "password reseting code";
-            SmtpClient smpt = new SmtpClient("smpt.gmail.com");
+            SmtpClient smpt = new SmtpClient("smtp.gmail.com");
             smpt.EnableSsl = true;
             smpt.Port = 587;
             smpt.DeliveryMethod = SmtpDeliveryMethod.Network;
