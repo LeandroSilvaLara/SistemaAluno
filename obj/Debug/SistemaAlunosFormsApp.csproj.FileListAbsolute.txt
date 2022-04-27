@@ -30,3 +30,4 @@ D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\bin\Debug\itextsharp.xml
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_NovoAluno.resources
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_SelecionarTurma.resources
 D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_GestaoDeAlunos.resources
+D:\C# Projeto\Nova pasta\SistemaAlunosFormsApp\obj\Debug\SistemaAlunosFormsApp.F_Envio_Documento.resources

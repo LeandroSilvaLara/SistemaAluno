@@ -57,6 +57,7 @@ namespace SistemaAlunosFormsApp
             cb_turma.DisplayMember = "Turma";
             //cb_turma.ValueMember = "N_IDTURMA";
             cb_turma.ValueMember = "ID";
+            
 
             //Popular o ComboBox Status
             Dictionary<string, string> status = new Dictionary<string, string>();

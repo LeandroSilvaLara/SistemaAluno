@@ -78,6 +78,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Envio_Documento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Envio_Documento.Designer.cs">
+      <DependentUpon>F_Envio_Documento.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_GestaoDeAlunos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Envio_Documento.resx">
+      <DependentUpon>F_Envio_Documento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_GestaoDeAlunos.resx">
       <DependentUpon>F_GestaoDeAlunos.cs</DependentUpon>

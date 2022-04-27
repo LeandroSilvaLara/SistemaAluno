@@ -118,5 +118,11 @@ namespace SistemaAlunosFormsApp
             F_GestaoDeAlunos f_GestaoDeAlunos = new F_GestaoDeAlunos();
             abreForm(3, f_GestaoDeAlunos);
         }
+
+        private void envioDeEmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_Envio_Documento f_Envio_Documento = new F_Envio_Documento();
+            abreForm(3, f_Envio_Documento);
+        }
     }
 }
