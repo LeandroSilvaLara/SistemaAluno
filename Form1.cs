@@ -139,5 +139,10 @@ namespace SistemaAlunosFormsApp
         {
             
         }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

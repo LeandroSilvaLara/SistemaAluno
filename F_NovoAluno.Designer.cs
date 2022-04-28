@@ -71,6 +71,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(105)))), ((int)(((byte)(37)))));
             this.panel1.Controls.Add(this.btn_fechar);
             this.panel1.Controls.Add(this.btn_cancelar);
             this.panel1.Controls.Add(this.btn_gravar);
@@ -220,11 +221,14 @@
             // 
             // brn_addFoto
             // 
+            this.brn_addFoto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brn_addFoto.Image = global::SistemaAlunosFormsApp.Properties.Resources.foto_de_perfil_de_usuario_masculino;
+            this.brn_addFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.brn_addFoto.Location = new System.Drawing.Point(525, 159);
             this.brn_addFoto.Name = "brn_addFoto";
             this.brn_addFoto.Size = new System.Drawing.Size(85, 23);
             this.brn_addFoto.TabIndex = 57;
-            this.brn_addFoto.Text = "Add foto";
+            this.brn_addFoto.Text = "    Add foto";
             this.brn_addFoto.UseVisualStyleBackColor = true;
             this.brn_addFoto.Click += new System.EventHandler(this.brn_addFoto_Click);
             // 
@@ -242,6 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(646, 244);
             this.Controls.Add(this.brn_addFoto);
             this.Controls.Add(this.pb_foto);
@@ -258,6 +263,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tb_nome);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "F_NovoAluno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo Aluno";

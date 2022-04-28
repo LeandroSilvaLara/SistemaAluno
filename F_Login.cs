@@ -8,12 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices;
 
 namespace SistemaAlunosFormsApp
 {
     
     public partial class F_Login : Form
     {
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+              (
+                int nLeft,
+                int nTop,
+                int nRight,
+                int nBotoom,
+                int nWidthEllipse,
+                int nHeightEllipse
+              );
+
         Form1 form1;
         DataTable dt = new DataTable();
         public F_Login(Form1 f)
@@ -21,6 +34,8 @@ namespace SistemaAlunosFormsApp
             InitializeComponent();
             form1 = f;
         }
+
+
 
         private void btn_logar_Click(object sender, EventArgs e)
         {
@@ -62,6 +77,22 @@ namespace SistemaAlunosFormsApp
             F_Esqueceu_Senha sc = new F_Esqueceu_Senha();
             this.Hide();
             sc.Show();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized; 
+        }
+
+        private void F_Login_Load(object sender, EventArgs e)
+        {
+            btn_logar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_logar.Width,
+                btn_logar.Height, 30, 30));
         }
     }
 }
