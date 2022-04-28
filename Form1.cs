@@ -125,7 +125,7 @@ namespace SistemaAlunosFormsApp
         int count = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (count < 10)
+            if (count < 7)
             { 
             pictureBox1.Image = imageList1.Images[count];
             count++;

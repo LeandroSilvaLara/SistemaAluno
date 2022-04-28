@@ -48,6 +48,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(105)))), ((int)(((byte)(37)))));
             this.panel1.Controls.Add(this.btn_excluirHorario);
             this.panel1.Controls.Add(this.btn_fechar);
             this.panel1.Controls.Add(this.btn_exluirTurma);
@@ -96,7 +97,7 @@
             this.btn_salvarSalvaredicoes.Name = "btn_salvarSalvaredicoes";
             this.btn_salvarSalvaredicoes.Size = new System.Drawing.Size(150, 27);
             this.btn_salvarSalvaredicoes.TabIndex = 8;
-            this.btn_salvarSalvaredicoes.Text = "Salvar         Edições";
+            this.btn_salvarSalvaredicoes.Text = "Salvar  Edições";
             this.btn_salvarSalvaredicoes.UseVisualStyleBackColor = true;
             this.btn_salvarSalvaredicoes.Click += new System.EventHandler(this.btn_salvarSalvaredicoes_Click);
             // 
@@ -240,6 +241,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(742, 528);
             this.Controls.Add(this.tb_vagas);
             this.Controls.Add(this.label6);

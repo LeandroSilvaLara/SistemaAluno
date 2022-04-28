@@ -138,6 +138,12 @@
     <Compile Include="F_NovoUsuario.Designer.cs">
       <DependentUpon>F_NovoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Perfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Perfil.Designer.cs">
+      <DependentUpon>F_Perfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Resetar_Senha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_NovoUsuario.resx">
       <DependentUpon>F_NovoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Perfil.resx">
+      <DependentUpon>F_Perfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Resetar_Senha.resx">
       <DependentUpon>F_Resetar_Senha.cs</DependentUpon>

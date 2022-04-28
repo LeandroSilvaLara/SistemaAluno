@@ -21,18 +21,34 @@ namespace SistemaAlunosFormsApp
 
         private void F_SelecionarTurma_Load(object sender, EventArgs e)
         {
-               /* 
-                = @"SELECT tbt.N_IDTURMA as 'ID Turma',tbt.T_DSCTURMA as 'Desc. turma',tbh.T_DSCHORARIO as 'Turma',tbp.T_NOMEPROFESSOR as 'Professor',tbt.N_MAXALUNOS as 'Qtde. Máx. Alunos', (SELECT count(N_IDALUNOS) FROM tb_alunos as tba WHERE tba.N_IDTURMA = tbt.N_IDTURMA and T_STATUS = 'A') as 'Qtde. Alunos' from 
-                                tb_turmas as tbt
-                                INNER JOIN 
-                                tb_professores as tbp on tbp.N_IDPROFESSOR = tbt.N_IDPROFESSOR,
-                                tb_horarios as tbh on tbh.N_IDHORARIO = tbt.N_IDHORARIO";
+
+            string queryTurma = String.Format(@"
+                    SELECT
+                        tbt.N_IDTURMA as 'ID',
+                        tbt.T_DSCTURMA as 'Turma',
+                        tbh.T_DSCHORARIO as 'Horario',
+                        tbp.T_NOMEPROFESSOR as 'Professor',
+                        tbt.N_MAXALUNOS as 'Máx. Alunos',
+                        ( SELECT
+                                count(N_IDALUNO)
+                          FROM
+                                tb_alunos as tba
+                          WHERE
+                                tba.N_IDTURMA = tbt.N_IDTURMA and T_STATUS = 'A'
+                        ) as 'Qtde. Alunos'
+                    FROM
+                        tb_turmas as tbt
+                    INNER JOIN
+                        tb_professores as tbp on tbp.N_IDPROFESSOR = tbt.N_IDPROFESSOR
+                    INNER JOIN
+                        tb_horarios as tbh on tbh.N_IDHORARIO = tbt.N_IDHORARIO
+            ");
             dgv_selecionarTurma.DataSource = Banco.dql(queryTurma);
             dgv_selecionarTurma.Columns[0].Width = 50;
             dgv_selecionarTurma.Columns[4].Width = 120;
             dgv_selecionarTurma.Columns[3].Width = 230;
              
-              */
+              
         }
 
         private void dgv_selecionarTurma_DoubleClick(object sender, EventArgs e)

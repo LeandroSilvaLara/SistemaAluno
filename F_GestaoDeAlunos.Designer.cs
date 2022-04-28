@@ -45,8 +45,8 @@
             this.mtb_telefone = new System.Windows.Forms.MaskedTextBox();
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.cb_turma = new System.Windows.Forms.ComboBox();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_selecionarAluno)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
@@ -67,7 +67,7 @@
             this.dgv_selecionarAluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_selecionarAluno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgv_selecionarAluno.EnableHeadersVisualStyles = false;
-            this.dgv_selecionarAluno.Location = new System.Drawing.Point(8, 8);
+            this.dgv_selecionarAluno.Location = new System.Drawing.Point(14, 8);
             this.dgv_selecionarAluno.MultiSelect = false;
             this.dgv_selecionarAluno.Name = "dgv_selecionarAluno";
             this.dgv_selecionarAluno.ReadOnly = true;
@@ -87,6 +87,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(105)))), ((int)(((byte)(37)))));
             this.panel1.Controls.Add(this.brn_fechar);
             this.panel1.Controls.Add(this.btn_financeiro);
             this.panel1.Controls.Add(this.btn_excluirAluno);
@@ -139,7 +140,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(336, 17);
+            this.label1.Location = new System.Drawing.Point(342, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 3;
@@ -148,7 +149,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(336, 85);
+            this.label2.Location = new System.Drawing.Point(342, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 4;
@@ -157,7 +158,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(485, 85);
+            this.label3.Location = new System.Drawing.Point(491, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 5;
@@ -166,7 +167,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(336, 151);
+            this.label4.Location = new System.Drawing.Point(342, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 6;
@@ -175,7 +176,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(336, 390);
+            this.label5.Location = new System.Drawing.Point(342, 390);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(153, 13);
             this.label5.TabIndex = 7;
@@ -183,14 +184,14 @@
             // 
             // tb_nome
             // 
-            this.tb_nome.Location = new System.Drawing.Point(339, 37);
+            this.tb_nome.Location = new System.Drawing.Point(345, 37);
             this.tb_nome.Name = "tb_nome";
             this.tb_nome.Size = new System.Drawing.Size(296, 20);
             this.tb_nome.TabIndex = 8;
             // 
             // mtb_telefone
             // 
-            this.mtb_telefone.Location = new System.Drawing.Point(339, 104);
+            this.mtb_telefone.Location = new System.Drawing.Point(345, 104);
             this.mtb_telefone.Mask = "(99)99999-9999";
             this.mtb_telefone.Name = "mtb_telefone";
             this.mtb_telefone.Size = new System.Drawing.Size(100, 20);
@@ -199,42 +200,43 @@
             // cb_status
             // 
             this.cb_status.FormattingEnabled = true;
-            this.cb_status.Location = new System.Drawing.Point(488, 104);
+            this.cb_status.Location = new System.Drawing.Point(494, 104);
             this.cb_status.Name = "cb_status";
             this.cb_status.Size = new System.Drawing.Size(147, 21);
             this.cb_status.TabIndex = 10;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(339, 204);
+            this.button2.Location = new System.Drawing.Point(345, 204);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(296, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Imprimir Carterinha";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // cb_turma
+            // 
+            this.cb_turma.FormattingEnabled = true;
+            this.cb_turma.Location = new System.Drawing.Point(345, 168);
+            this.cb_turma.Name = "cb_turma";
+            this.cb_turma.Size = new System.Drawing.Size(296, 21);
+            this.cb_turma.TabIndex = 12;
+            // 
             // pb_foto
             // 
             this.pb_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pb_foto.Location = new System.Drawing.Point(339, 246);
+            this.pb_foto.Location = new System.Drawing.Point(345, 246);
             this.pb_foto.Name = "pb_foto";
             this.pb_foto.Size = new System.Drawing.Size(102, 136);
             this.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_foto.TabIndex = 11;
             this.pb_foto.TabStop = false;
             // 
-            // cb_turma
-            // 
-            this.cb_turma.FormattingEnabled = true;
-            this.cb_turma.Location = new System.Drawing.Point(339, 168);
-            this.cb_turma.Name = "cb_turma";
-            this.cb_turma.Size = new System.Drawing.Size(296, 21);
-            this.cb_turma.TabIndex = 12;
-            // 
             // F_GestaoDeAlunos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(664, 448);
             this.Controls.Add(this.cb_turma);
             this.Controls.Add(this.pb_foto);

@@ -29,7 +29,8 @@ namespace SistemaAlunosFormsApp
             vqueryDGV = @"
                     SELECT
                         N_IDALUNO as 'ID',
-                        T_NOMEALUNO as 'Aluno'
+                        T_NOMEALUNO as 'Aluno',
+                        T_MEDIA as 'Média'
                     FROM
                         tb_alunos
             ";

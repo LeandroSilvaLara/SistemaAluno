@@ -40,6 +40,8 @@
             this.lblAnexo = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,27 +86,31 @@
             // 
             // txtRemetente
             // 
+            this.txtRemetente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRemetente.Location = new System.Drawing.Point(122, 146);
             this.txtRemetente.Name = "txtRemetente";
-            this.txtRemetente.Size = new System.Drawing.Size(320, 20);
+            this.txtRemetente.Size = new System.Drawing.Size(320, 25);
             this.txtRemetente.TabIndex = 4;
             // 
             // textDestinatario
             // 
+            this.textDestinatario.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDestinatario.Location = new System.Drawing.Point(122, 202);
             this.textDestinatario.Name = "textDestinatario";
-            this.textDestinatario.Size = new System.Drawing.Size(320, 20);
+            this.textDestinatario.Size = new System.Drawing.Size(320, 25);
             this.textDestinatario.TabIndex = 5;
             // 
             // textAssunto
             // 
+            this.textAssunto.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textAssunto.Location = new System.Drawing.Point(122, 258);
             this.textAssunto.Name = "textAssunto";
-            this.textAssunto.Size = new System.Drawing.Size(320, 20);
+            this.textAssunto.Size = new System.Drawing.Size(320, 25);
             this.textAssunto.TabIndex = 6;
             // 
             // textMensagem
             // 
+            this.textMensagem.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMensagem.Location = new System.Drawing.Point(122, 310);
             this.textMensagem.MaxLength = 60000;
             this.textMensagem.Multiline = true;
@@ -117,20 +123,20 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(47, 420);
+            this.label5.Location = new System.Drawing.Point(60, 429);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 20);
+            this.label5.Size = new System.Drawing.Size(54, 20);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Mensagem";
+            this.label5.Text = "Anexo";
             // 
             // lblAnexo
             // 
             this.lblAnexo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lblAnexo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblAnexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnexo.Location = new System.Drawing.Point(142, 426);
+            this.lblAnexo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnexo.Location = new System.Drawing.Point(122, 426);
             this.lblAnexo.Name = "lblAnexo";
-            this.lblAnexo.Size = new System.Drawing.Size(300, 23);
+            this.lblAnexo.Size = new System.Drawing.Size(320, 23);
             this.lblAnexo.TabIndex = 9;
             this.lblAnexo.Click += new System.EventHandler(this.lblAnexo_Click);
             // 
@@ -149,11 +155,23 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaAlunosFormsApp.Properties.Resources.Educa;
+            this.pictureBox1.Location = new System.Drawing.Point(181, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(177, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // F_Envio_Documento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(473, 538);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.lblAnexo);
             this.Controls.Add(this.label5);
@@ -168,6 +186,7 @@
             this.Name = "F_Envio_Documento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_Envio_Documento";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +206,6 @@
         private System.Windows.Forms.Label lblAnexo;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
