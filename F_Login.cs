@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace SistemaAlunosFormsApp
 {
+    
     public partial class F_Login : Form
     {
         Form1 form1;

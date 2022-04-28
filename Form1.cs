@@ -49,10 +49,7 @@ namespace SistemaAlunosFormsApp
         { 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void logonToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -123,6 +120,24 @@ namespace SistemaAlunosFormsApp
         {
             F_Envio_Documento f_Envio_Documento = new F_Envio_Documento();
             abreForm(3, f_Envio_Documento);
+        }
+
+        int count = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (count < 10)
+            { 
+            pictureBox1.Image = imageList1.Images[count];
+            count++;
+            }
+            else
+            {
+                count = 0;
+            }
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

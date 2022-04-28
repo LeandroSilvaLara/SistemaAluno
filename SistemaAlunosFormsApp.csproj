@@ -226,6 +226,36 @@
   <ItemGroup>
     <None Include="imgs\Educa.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P10.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
