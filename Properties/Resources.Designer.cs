@@ -213,6 +213,16 @@ namespace SistemaAlunosFormsApp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Maria {
+            get {
+                object obj = ResourceManager.GetObject("Maria", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menos {
             get {
                 object obj = ResourceManager.GetObject("menos", resourceCulture);
@@ -396,6 +406,16 @@ namespace SistemaAlunosFormsApp.Properties {
         internal static System.Drawing.Bitmap user__2_ {
             get {
                 object obj = ResourceManager.GetObject("user (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2022_04_28_at_20_11_54 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2022-04-28 at 20.11.54", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

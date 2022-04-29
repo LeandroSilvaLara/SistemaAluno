@@ -35,11 +35,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lb_acesso = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pb_ledLogado = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pb_ledLogado = new System.Windows.Forms.PictureBox();
             this.alunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestãoDeAlunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.perfilDoAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -54,14 +58,10 @@
             this.logonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.perfilDoAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ledLogado)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ledLogado)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -114,16 +114,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Acesso:";
             // 
-            // pb_ledLogado
-            // 
-            this.pb_ledLogado.Image = global::SistemaAlunosFormsApp.Properties.Resources.led_vermelho;
-            this.pb_ledLogado.Location = new System.Drawing.Point(5, 6);
-            this.pb_ledLogado.Name = "pb_ledLogado";
-            this.pb_ledLogado.Size = new System.Drawing.Size(20, 19);
-            this.pb_ledLogado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_ledLogado.TabIndex = 0;
-            this.pb_ledLogado.TabStop = false;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(105)))), ((int)(((byte)(37)))));
@@ -137,6 +127,43 @@
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 7000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "1.png");
+            this.imageList1.Images.SetKeyName(1, "2.png");
+            this.imageList1.Images.SetKeyName(2, "3.png");
+            this.imageList1.Images.SetKeyName(3, "4.png");
+            this.imageList1.Images.SetKeyName(4, "5.png");
+            this.imageList1.Images.SetKeyName(5, "6.png");
+            this.imageList1.Images.SetKeyName(6, "7.png");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(776, 375);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pb_ledLogado
+            // 
+            this.pb_ledLogado.Image = global::SistemaAlunosFormsApp.Properties.Resources.led_vermelho;
+            this.pb_ledLogado.Location = new System.Drawing.Point(5, 6);
+            this.pb_ledLogado.Name = "pb_ledLogado";
+            this.pb_ledLogado.Size = new System.Drawing.Size(20, 19);
+            this.pb_ledLogado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_ledLogado.TabIndex = 0;
+            this.pb_ledLogado.TabStop = false;
             // 
             // alunosToolStripMenuItem
             // 
@@ -154,16 +181,23 @@
             // novoAlunoToolStripMenuItem
             // 
             this.novoAlunoToolStripMenuItem.Name = "novoAlunoToolStripMenuItem";
-            this.novoAlunoToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.novoAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoAlunoToolStripMenuItem.Text = "Novo Aluno";
             this.novoAlunoToolStripMenuItem.Click += new System.EventHandler(this.novoAlunoToolStripMenuItem_Click);
             // 
             // gestãoDeAlunosToolStripMenuItem
             // 
             this.gestãoDeAlunosToolStripMenuItem.Name = "gestãoDeAlunosToolStripMenuItem";
-            this.gestãoDeAlunosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.gestãoDeAlunosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestãoDeAlunosToolStripMenuItem.Text = "Gestão de Alunos";
             this.gestãoDeAlunosToolStripMenuItem.Click += new System.EventHandler(this.gestãoDeAlunosToolStripMenuItem_Click);
+            // 
+            // perfilDoAlunoToolStripMenuItem
+            // 
+            this.perfilDoAlunoToolStripMenuItem.Name = "perfilDoAlunoToolStripMenuItem";
+            this.perfilDoAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.perfilDoAlunoToolStripMenuItem.Text = "Perfil do Aluno";
+            this.perfilDoAlunoToolStripMenuItem.Click += new System.EventHandler(this.perfilDoAlunoToolStripMenuItem_Click);
             // 
             // usuáriosToolStripMenuItem
             // 
@@ -215,35 +249,35 @@
             // bancoDeDadosToolStripMenuItem
             // 
             this.bancoDeDadosToolStripMenuItem.Name = "bancoDeDadosToolStripMenuItem";
-            this.bancoDeDadosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.bancoDeDadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bancoDeDadosToolStripMenuItem.Text = "Banco de dados";
             this.bancoDeDadosToolStripMenuItem.Click += new System.EventHandler(this.bancoDeDadosToolStripMenuItem_Click);
             // 
             // horáriosToolStripMenuItem
             // 
             this.horáriosToolStripMenuItem.Name = "horáriosToolStripMenuItem";
-            this.horáriosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.horáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.horáriosToolStripMenuItem.Text = "Horários";
             this.horáriosToolStripMenuItem.Click += new System.EventHandler(this.horáriosToolStripMenuItem_Click);
             // 
             // professoresToolStripMenuItem
             // 
             this.professoresToolStripMenuItem.Name = "professoresToolStripMenuItem";
-            this.professoresToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.professoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.professoresToolStripMenuItem.Text = "Professores";
             this.professoresToolStripMenuItem.Click += new System.EventHandler(this.professoresToolStripMenuItem_Click);
             // 
             // turmasToolStripMenuItem
             // 
             this.turmasToolStripMenuItem.Name = "turmasToolStripMenuItem";
-            this.turmasToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.turmasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.turmasToolStripMenuItem.Text = "Turmas";
             this.turmasToolStripMenuItem.Click += new System.EventHandler(this.turmasToolStripMenuItem_Click);
             // 
             // envioDeEmailToolStripMenuItem
             // 
             this.envioDeEmailToolStripMenuItem.Name = "envioDeEmailToolStripMenuItem";
-            this.envioDeEmailToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.envioDeEmailToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.envioDeEmailToolStripMenuItem.Text = "Envio de email";
             this.envioDeEmailToolStripMenuItem.Click += new System.EventHandler(this.envioDeEmailToolStripMenuItem_Click);
             // 
@@ -263,56 +297,23 @@
             // logonToolStripMenuItem
             // 
             this.logonToolStripMenuItem.Name = "logonToolStripMenuItem";
-            this.logonToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.logonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logonToolStripMenuItem.Text = "Logon";
             this.logonToolStripMenuItem.Click += new System.EventHandler(this.logonToolStripMenuItem_Click);
             // 
             // logoffToolStripMenuItem
             // 
             this.logoffToolStripMenuItem.Name = "logoffToolStripMenuItem";
-            this.logoffToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.logoffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoffToolStripMenuItem.Text = "Logoff";
             this.logoffToolStripMenuItem.Click += new System.EventHandler(this.logoffToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 7000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "1.png");
-            this.imageList1.Images.SetKeyName(1, "2.png");
-            this.imageList1.Images.SetKeyName(2, "3.png");
-            this.imageList1.Images.SetKeyName(3, "4.png");
-            this.imageList1.Images.SetKeyName(4, "5.png");
-            this.imageList1.Images.SetKeyName(5, "6.png");
-            this.imageList1.Images.SetKeyName(6, "7.png");
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(776, 375);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // perfilDoAlunoToolStripMenuItem
-            // 
-            this.perfilDoAlunoToolStripMenuItem.Name = "perfilDoAlunoToolStripMenuItem";
-            this.perfilDoAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.perfilDoAlunoToolStripMenuItem.Text = "Perfil do Aluno";
             // 
             // Form1
             // 
@@ -330,10 +331,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ledLogado)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ledLogado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

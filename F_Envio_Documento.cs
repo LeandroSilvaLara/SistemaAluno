@@ -32,7 +32,7 @@ namespace SistemaAlunosFormsApp
                     using (MailMessage email = new MailMessage()) 
                     { 
                             //Servidor SMTP
-                        smpt.Host = "smtp.gmail.com";
+                        smpt.Host = "smtp.gmail.com ";
                         smpt.UseDefaultCredentials = false;
                         smpt.Credentials = new System.Net.NetworkCredential("leandrolaragames@gmail.com", "D@rk14145");
                         smpt.Port = 587;

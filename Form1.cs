@@ -144,5 +144,13 @@ namespace SistemaAlunosFormsApp
         {
             Close();
         }
+
+        private void perfilDoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            F_Perfil f_Perfil = new F_Perfil();
+            F_GestaoDeAlunos f_GestaoDeAlunos = new F_GestaoDeAlunos();
+            abreForm(3, f_Perfil);
+        }
     }
 }

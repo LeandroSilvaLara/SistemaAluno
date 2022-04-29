@@ -328,6 +328,12 @@
   <ItemGroup>
     <None Include="Resources\foto-de-perfil-de-usuario-masculino.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2022-04-28 at 20.11.54.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
