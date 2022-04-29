@@ -74,7 +74,7 @@ namespace SistemaAlunosFormsApp
         private void novoUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             F_NovoUsuario f_NovoUsuario = new F_NovoUsuario();
-            abreForm(1, f_NovoUsuario);
+            abreForm(3, f_NovoUsuario);
         }
 
         private void gestãoDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace SistemaAlunosFormsApp
         private void gestãoDeAlunosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             F_GestaoDeAlunos f_GestaoDeAlunos = new F_GestaoDeAlunos();
-            abreForm(3, f_GestaoDeAlunos);
+            abreForm(2, f_GestaoDeAlunos);
         }
 
         private void envioDeEmailToolStripMenuItem_Click(object sender, EventArgs e)
@@ -149,8 +149,7 @@ namespace SistemaAlunosFormsApp
         {
            
             F_Perfil f_Perfil = new F_Perfil();
-            F_GestaoDeAlunos f_GestaoDeAlunos = new F_GestaoDeAlunos();
-            abreForm(3, f_Perfil);
+            abreForm(1, f_Perfil);
         }
     }
 }

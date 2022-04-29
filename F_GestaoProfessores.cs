@@ -19,13 +19,21 @@ namespace SistemaAlunosFormsApp
 
         private void F_GestaoProfessores_Load(object sender, EventArgs e)
         {
-            string vquery;
 
-            vquery = @"SELECT N_IDPROFESSOR as 'ID Professor',T_NOMEPROFESSOR as 'Nome professor',T_TELEFONE as Telefone from tb_professores ORDER BY T_NOMEPROFESSOR DESC";
+            string vquery = @"
+               SELECT
+                   N_IDPROFESSOR as 'ID',
+                   T_NOMEPROFESSOR as 'Professor',
+                   T_TELEFONE as 'Telefone'
+               FROM
+                   tb_professores
+               ORDER BY
+                    T_NOMEPROFESSOR
+            ";
             dgv_professores.DataSource = Banco.dql(vquery);
-            dgv_professores.Columns[0].Width = 75;
-            dgv_professores.Columns[1].Width = 254;
-            dgv_professores.Columns[2].Width = 100;
+            dgv_professores.Columns[0].Width = 60;
+            dgv_professores.Columns[1].Width = 170;
+            dgv_professores.Columns[1].Width = 100;
         }
 
         private void dgv_professores_SelectionChanged(object sender, EventArgs e)
@@ -35,71 +43,67 @@ namespace SistemaAlunosFormsApp
             if (contLinhas > 0)
             {
                 DataTable dt = new DataTable();
-                String vid = dgv.SelectedRows[0].Cells[0].Value.ToString();
+                string vid = dgv.SelectedRows[0].Cells[0].Value.ToString();
                 string vquery = @"
-                            SELECT * FROM tb_professores
-                                    WHERE N_IDPROFESSOR =                                       
-                        " + vid;
-                //MessageBox.Show("A CONTULTA QUE VAI SR FEITA VAI SER ASSIM "+vquery+vid);
+                    SELECT
+                        *
+                    FROM
+                        tb_professores
+                    WHERE
+                        N_IDPROFESSOR =" + vid;
                 dt = Banco.dql(vquery);
-
-                tb_idProfessores.Text = dt.Rows[0].Field<Int64>("N_IDPROFESSOR").ToString();
-                tb_professores.Text = dt.Rows[0].Field<string>("T_NOMEPROFESSOR");
-                mtb_dscHoario.Text = dt.Rows[0].Field<string>("T_TELEFONE");
-
-                /*  tb_idHorario.Text = dt.Rows[0].Field<Int64>("N_IDHORARIO").ToString();
-                  mtb_dscHoario.Text = dt.Rows[0].Field<string>("T_DSCHORARIO");
-                */
+                tb_idProfessor.Text = dt.Rows[0].Field<Int64>("N_IDPROFESSOR").ToString();
+                tb_nomeProfessor.Text = dt.Rows[0].Field<string>("T_NOMEPROFESSOR");
+                mtb_telefone.Text = dt.Rows[0].Field<string>("T_TELEFONE");
 
             }
         }
 
         private void btn_novo_Click(object sender, EventArgs e)
         {
-            tb_idProfessores.Clear();
-            tb_professores.Clear();
-            mtb_dscHoario.Clear();
-            tb_professores.Focus();
+            tb_idProfessor.Clear();
+            tb_nomeProfessor.Clear();
+            mtb_telefone.Clear();
+            tb_nomeProfessor.Focus();
         }
 
-        private void btn_salvarHorario_Click(object sender, EventArgs e)
+        private void btn_salvar_Click(object sender, EventArgs e)
         {
-            if (tb_idProfessores.Text == "")
+            string vquery;
+            if (tb_idProfessor.Text == "")
             {
-                string vquery = @"INSERT INTO tb_professores (T_NOMEPROFESSOR,T_TELEFONE) VALUES ('" + tb_professores.Text + "','" + mtb_dscHoario.Text + "') ";
-                Banco.dql(vquery);
-                dgv_professores.DataSource = Banco.dql(vquery);
+                vquery = "INSERT INTO tb_professores (T_NOMEPROFESSOR, T_TELEFONE) VALUES ('" + tb_nomeProfessor.Text + "', '" + mtb_telefone.Text + "')";
             }
             else
             {
-                string vquery = @"UPDATE tb_professores SET T_NOMEPROFESSOR = '" + tb_professores.Text + "',T_TELEFONE = '" + mtb_dscHoario.Text + "'  WHERE N_IDPROFESSOR = '" + tb_idProfessores.Text + "'";
-                Banco.dql(vquery);
-                dgv_professores.DataSource = Banco.dql(vquery);
-
+                vquery = "UPDATE tb_professores SET T_NOMEPROFESSOR='" + tb_nomeProfessor.Text + "',T_TELEFONE ='" + mtb_telefone.Text + "'  WHERE N_IDPROFESSOR = " + tb_idProfessor.Text;
             }
+
+            Banco.dml(vquery);
+            vquery = @"
+               SELECT
+                   N_IDPROFESSOR as 'ID',
+                   T_NOMEPROFESSOR as 'Professor',
+                   T_TELEFONE as 'Telefone'
+               FROM
+                   tb_professores
+               ORDER BY
+                    T_NOMEPROFESSOR
+            ";
+            dgv_professores.DataSource = Banco.dql(vquery);
         }
 
-        private void btn_excluirHorario_Click(object sender, EventArgs e)
+        private void btn_excluir_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Deseja excluir?", "Excluir", MessageBoxButtons.YesNo);
-
+            DialogResult res = MessageBox.Show("Confirma Exclusão?", "Excluir", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
-                //DataTable dt = new DataTable();
-                //String vid = dgv.SelectedRows[0].Cells[0].Value.ToString();
-                string vquery = @"
-                            DELETE  FROM tb_professores
-                                    WHERE N_IDPROFESSOR =                                       
-                        " + tb_idProfessores.Text;
-                //MessageBox.Show("A CONTULTA QUE VAI SR FEITA VAI SER ASSIM "+vquery+vid);
-                Banco.dql(vquery);
-
-                tb_idProfessores.Clear();
-                tb_professores.Clear();
-                mtb_dscHoario.Clear();
-
+                string vquery = "DELETE FROM tb_professores WHERE N_IDPROFESSOR = " + tb_idProfessor.Text;
+                Banco.dml(vquery);
                 dgv_professores.Rows.Remove(dgv_professores.CurrentRow);
-
+                tb_idProfessor.Clear();
+                tb_nomeProfessor.Clear();
+                mtb_telefone.Clear();
 
             }
         }
@@ -107,11 +111,6 @@ namespace SistemaAlunosFormsApp
         private void btn_fechar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void dgv_professores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

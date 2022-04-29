@@ -16,9 +16,9 @@ namespace SistemaAlunosFormsApp
 {
     public partial class F_GestaoDeTurmas : Form
     {
+
         string idSelecionado;
         int modo = 0; //0-Padrão, 1-Edição, 2=Iserção
-
         public F_GestaoDeTurmas()
         {
             InitializeComponent();
@@ -69,6 +69,15 @@ namespace SistemaAlunosFormsApp
 
             //Nome da turma
 
+
+
+
+
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void dgv_turmas_SelectionChanged(object sender, EventArgs e)
@@ -88,29 +97,25 @@ namespace SistemaAlunosFormsApp
                 cb_status.SelectedValue = dt.Rows[0].Field<string>("T_STATUS");
                 cb_horario.SelectedValue = dt.Rows[0].Field<Int64>("N_IDHORARIO").ToString();
                 tb_nomeTurma.Text = dt.Rows[0].Field<string>("T_DSCTURMA");
-                //numeroVagas();
+                numeroVagas();
 
-                tb_vagas.Text = calcVagas();
             }
         }
 
-        private string calcVagas()
+        private void numeroVagas()
         {
-            // Cálculo de vagas
+            //Cálculo de vagas
+
             string queryVagas = String.Format(@"
-                    SELECT
-                        N_IDALUNO as 'contVagas'
-                    FROM
-                        tb_alunos
-                    WHERE
-                        T_STATUS='A' and N_IDTURMA={0}", idSelecionado);
+                 SELECT  count(N_IDALUNO) as 'contvagas' FROM tb_alunos WHERE T_STATUS = 'A' and N_IDTURMA = {0}", idSelecionado);
+
+
             DataTable dt = Banco.dql(queryVagas);
             int vagas = Int32.Parse(Math.Round(n_maxAlunos.Value, 0).ToString());
-            vagas -= Int32.Parse(dt.Rows[0].Field<Int64>("contVagas").ToString());
-            
-            return vagas.ToString();
-        }
+            vagas -= Int32.Parse(dt.Rows[0].Field<Int64>("contvagas").ToString());
+            tb_vagas.Text = vagas.ToString();
 
+        }
 
         private void btn_novaTurma_Click(object sender, EventArgs e)
         {
@@ -123,6 +128,8 @@ namespace SistemaAlunosFormsApp
             tb_nomeTurma.Focus();
             tb_vagas.Clear();
             modo = 2;
+
+
         }
 
         private void btn_salvarSalvaredicoes_Click(object sender, EventArgs e)
@@ -137,15 +144,15 @@ namespace SistemaAlunosFormsApp
                     queryAtualizarTurma = String.Format(@"
                      UPDATE tb_turmas SET T_DSCTURMA = '{0}',N_IDPROFESSOR= {1},N_IDHORARIO = {2}, N_MAXALUNOS= '{3}',T_STATUS = '{4}' WHERE N_IDTURMA = {5}", tb_nomeTurma.Text,
                      cb_professores.SelectedValue, cb_horario.SelectedValue, Int32.Parse(Math.Round(n_maxAlunos.Value, 0).ToString()), cb_status.SelectedValue, idSelecionado);
-                     Banco.dml(queryAtualizarTurma);
-                     //numeroVagas();
+                    // Banco.dml(queryAtualizarTurma);
+                    numeroVagas();
                 }
                 else
                 {
                     mgs = "Turma inserida";
                     queryAtualizarTurma = String.Format(@"INSERT INTO tb_turmas (T_DSCTURMA,N_IDPROFESSOR,N_IDHORARIO,N_MAXALUNOS,T_STATUS)  VALUES ('{0}',{1},{2},{3},'{4}')", tb_nomeTurma.Text, cb_professores.SelectedValue, cb_horario.SelectedValue, Int32.Parse(Math.Round(n_maxAlunos.Value, 0).ToString()), cb_status.SelectedValue);
                     MessageBox.Show("vai ser feito isso" + queryAtualizarTurma);
-                    //numeroVagas();
+                    numeroVagas();
 
 
                 }
@@ -165,6 +172,8 @@ namespace SistemaAlunosFormsApp
                 }
                 MessageBox.Show(mgs);
             }
+
+
         }
 
         private void btn_exluirTurma_Click(object sender, EventArgs e)
@@ -182,11 +191,6 @@ namespace SistemaAlunosFormsApp
             */
         }
 
-        private void btn_fechar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void btn_excluirHorario_Click(object sender, EventArgs e)
         {
             string nomeArquino = Globais.caminho + @"\turmas.pdf";
@@ -194,31 +198,44 @@ namespace SistemaAlunosFormsApp
             Document doc = new Document(PageSize.A4);
             PdfWriter escritorPDF = PdfWriter.GetInstance(doc, arquivoPDF);
 
-            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(Globais.caminho + @"\Educa.png");
-            logo.ScaleToFit(140f, 120f);
-            logo.Alignment = Element.ALIGN_LEFT;
-            //logo.SetAbsolutePosition(100f, 700f); //X, -Y
 
-            
+            //Inserindo uma imagem
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(Globais.caminho + @"\logo1.PNG");
+            logo.ScaleToFit(112, 96);
+
+            /*
+            um desses 
+            logo.Alignment = Element.ALIGN_LEFT;
+            ou
+            */
+            logo.SetAbsolutePosition(35, 720f); // X , -Y(com 0 ele fica na base da pagina)
+
+            //Inserindo uma imagem*/
+
+
             string dados = "";
 
-            Paragraph paragrafo1 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 20, (int)System.Drawing.FontStyle.Bold));
-            paragrafo1.Alignment = Element.ALIGN_CENTER;
-            paragrafo1.Add("CFB OnliNotas");
-            paragrafo1.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Italic);
-            paragrafo1.Add("Acesso sua nota online!");
-            string texto = "Leandro Lara";
-            paragrafo1.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Italic);
-            paragrafo1.Add(texto);
+            Paragraph paragrafo1 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 25, (int)System.Drawing.FontStyle.Bold));
 
-            Paragraph paragrafo2 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Bold));
+            paragrafo1.Alignment = Element.ALIGN_CENTER;
+            paragrafo1.Add("Estudo PDF\n");
+            paragrafo1.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Italic);
+            paragrafo1.Add("Curso em C#\n");
+            string texto = "\nRelatório de turmas";
+            paragrafo1.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 20, (int)System.Drawing.FontStyle.Bold);
+            paragrafo1.Add(texto + "\n\n");
+
+
+            Paragraph paragrafo2 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 25, (int)System.Drawing.FontStyle.Bold));
+
             paragrafo2.Alignment = Element.ALIGN_LEFT;
-            paragrafo2.Add("Teste do páragrafo 2 resumo");
-            paragrafo2.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Italic);
-            paragrafo2.Add("Acesso ");
-            texto = "Leandro Lara";
-            paragrafo2.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Italic);
-            paragrafo2.Add(texto);
+            paragrafo2.Add("\n\nParagrago 2\n");
+            string texto2 = "esse é o texto do segundo aparagrafo\n Loollllaaaaaaaaaaaaaaaaaaaaaaaaaa.\n\n";
+            paragrafo2.Font = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12, (int)System.Drawing.FontStyle.Italic);
+            paragrafo2.Add(texto2 + "\n");
+
+
+
 
             //Inserindo Tabela
             PdfPTable tabela = new PdfPTable(3);//3Colunas
@@ -266,7 +283,6 @@ namespace SistemaAlunosFormsApp
             doc.Open();
             doc.Add(logo);
             doc.Add(paragrafo1);
-            doc.Add(paragrafo2);
             doc.Add(tabela);
             // doc.Add(paragrafo2);
             doc.Close();
@@ -276,9 +292,8 @@ namespace SistemaAlunosFormsApp
             {
                 System.Diagnostics.Process.Start(Globais.caminho + @"\turmas.pdf");
             }
-
+        }
 
 
         }
     }
-}

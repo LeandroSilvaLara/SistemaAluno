@@ -43,7 +43,7 @@ namespace SistemaAlunosFormsApp
                 tb_username.Text = dt.Rows[0].Field<string>("T_USERNAME").ToString();
                 tb_senha.Text = dt.Rows[0].Field<string>("T_SENHAUSUARIO").ToString();
                 cb_status.Text = dt.Rows[0].Field<string>("T_STATUSUARIO").ToString();
-                //n_nivel.Value = dt.Rows[0].Field<Int64>("N_NIVELUSUARIO");   
+                //n_nivel.Value = dt.Rows[0].Field<Int64>("N_NIVELUSUARIO");
             }
         }
         private void btn_novo_Click(object sender, EventArgs e)

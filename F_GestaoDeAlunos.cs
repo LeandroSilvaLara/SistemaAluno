@@ -43,21 +43,29 @@ namespace SistemaAlunosFormsApp
 
 
             string vqueryTurmas = @"
-                    SELECT N_IDTURMA as 'ID',
-                           ('Vagas: ' || ((N_MAXALUNOS) - 
-                                    (
-                                            SELECT count(tba.N_IDALUNO) from tb_alunos as tba WHERE tba.T_STATUS = 'A' and tba.N_IDTURMA = tbt.N_IDTURMA 
-                                    )
-                                        )|| '   /   Turma: ' || T_DSCTURMA) as 'Turma'
-                            FROM tb_turmas as tbt
-                            ORDER BY
-                             N_IDTURMA";
+                   SELECT
+                        N_IDTURMA,
+                        ('Vagas: '|| (
+                                        (N_MAXALUNOS)-(
+                                                        SELECT
+                                                            count(tba.N_IDALUNO)
+                                                        FROM
+                                                            tb_alunos as tba
+                                                        WHERE
+                                                            tba.T_STATUS ='A' and tba.N_IDTURMA = N_IDTURMA
+                                                       )
+                                       ) || ' / Turma: ' || T_DSCTURMA
+                        ) as 'Turma'
+                    FROM
+                        tb_turmas
+                    ORDER BY
+                        N_IDTURMA";
 
             cb_turma.Items.Clear();
             cb_turma.DataSource = Banco.dql(vqueryTurmas);
             cb_turma.DisplayMember = "Turma";
-            //cb_turma.ValueMember = "N_IDTURMA";
-            cb_turma.ValueMember = "ID";
+            cb_turma.ValueMember = "N_IDTURMA";
+            //cb_turma.ValueMember = "ID";
             
 
             //Popular o ComboBox Status

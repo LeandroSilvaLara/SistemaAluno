@@ -56,7 +56,7 @@ namespace SistemaAlunosFormsApp
             if (randomCode == (txtVerCode.Text).ToString())
             {
                 to = txtEmail.Text;
-                F_Resetar_Senha rp = new F_Resetar_Senha();
+                F_GestaoUsuarios rp = new F_GestaoUsuarios();
                 this.Hide();
                 rp.Show();
             }
