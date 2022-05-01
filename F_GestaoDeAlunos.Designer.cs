@@ -211,7 +211,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(296, 23);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Imprimir Carterinha";
+            this.button2.Text = "Imprimir Declaração";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // cb_turma

@@ -34,10 +34,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SistemaAlunosFormsApp.Properties.Resources.WhatsApp_Image_2022_04_28_at_20_11_54;
-            this.pictureBox1.Location = new System.Drawing.Point(-6, -9);
+            this.pictureBox1.Image = global::SistemaAlunosFormsApp.Properties.Resources.Leandro_Lara2;
+            this.pictureBox1.Location = new System.Drawing.Point(1, -6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(826, 447);
+            this.pictureBox1.Size = new System.Drawing.Size(815, 440);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;

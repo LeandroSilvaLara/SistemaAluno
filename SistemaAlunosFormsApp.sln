@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaAlunosFormsApp", "SistemaAlunosFormsApp.csproj", "{847CCE34-EF7E-41F5-8663-43ADA0D7C7BD}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador_CFBOnliNotas", "instalador\Instalador_CFBOnliNotas\Instalador_CFBOnliNotas.vdproj", "{38A2318A-FEE6-425A-9DC5-E5E8EB415757}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{847CCE34-EF7E-41F5-8663-43ADA0D7C7BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{847CCE34-EF7E-41F5-8663-43ADA0D7C7BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{847CCE34-EF7E-41F5-8663-43ADA0D7C7BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A2318A-FEE6-425A-9DC5-E5E8EB415757}.Debug|Any CPU.ActiveCfg = Debug
+		{38A2318A-FEE6-425A-9DC5-E5E8EB415757}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

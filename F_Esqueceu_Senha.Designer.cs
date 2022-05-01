@@ -94,7 +94,7 @@
             this.Controls.Add(this.txtEmail);
             this.Name = "F_Esqueceu_Senha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "F_Esqueceu_Senha";
+            this.Text = "Esqueceu Senha";
             this.ResumeLayout(false);
             this.PerformLayout();
 
